@@ -4,24 +4,22 @@
 
 **Grupo 2**
 
-[CASOS DE USO](./projeto/diagrama-de-classes.md)
+[CASOS DE USO](./projeto/casos-de-uso.md)
 
-[HISTÓRIAS DE USUÁRIO](./projeto/diagrama-de-caso-de-uso.md)
+[HISTÓRIAS DE USUÁRIO](./projeto/historias-de-usuario.md)
 
-[DIAGRAMA DE CLASSES](./projeto/descricao-das-historias-de-usuario.md)
+[DIAGRAMA DE CLASSES](./projeto/diagrama-de-classes.md)
 
-[DIAGRAMA DE COMPONENTES](./projeto/descricao-das-historias-de-usuario.md)
+[DIAGRAMA DE COMPONENTES](./projeto/diagrama-de-componentes.md)
 
-[DIAGRAMA DE IMPLANTAÇÃO](./projeto/descricao-das-historias-de-usuario.md)
+[DIAGRAMA DE IMPLANTAÇÃO](./projeto/diagrama-de-implantacao.md)
 
 [CÓDIGO](./implementacao/)
 
  ![](./projeto/imagens/colaborador1.jpg)
  ![](./projeto/imagens/colaborador2.jpeg)
- ![](./projeto/imagens/colaborador3.png)
 
  | Colaboradores |
  | --- |
  | Bernardo Rohlfs |
  | Eric Jardim |
- | Olivier Rubinger |
