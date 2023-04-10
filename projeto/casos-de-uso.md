@@ -1,3 +1,3 @@
 ## Casos de Uso
 
-![](./imagens/caso-de-uso-lab3.png)
+![](./imagens/casos-de-uso.png)
