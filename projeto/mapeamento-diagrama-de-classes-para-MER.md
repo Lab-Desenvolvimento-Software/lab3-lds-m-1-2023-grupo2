@@ -1,5 +1,7 @@
 # Mapeamento do diagrama de classe para o MER
 
+| Caractére | Legenda |
+| --- | --- |
 | # | Primary Key |
 | @ | Foreign Key |
 
