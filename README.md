@@ -14,6 +14,8 @@
 
 [DIAGRAMA DE IMPLANTAÇÃO](./projeto/diagrama-de-implantacao.md)
 
+[MAPEAMENTO MER](./projeto/mapeamento-diagrama-de-classes-para-MER.md)
+
 [CÓDIGO](./implementacao/)
 
  ![](./projeto/imagens/colaborador1.jpg)
