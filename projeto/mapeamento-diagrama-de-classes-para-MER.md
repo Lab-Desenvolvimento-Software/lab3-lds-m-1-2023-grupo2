@@ -13,6 +13,6 @@
 
 * Empresa(**#id**, *@id_usuario*, cnpj, nome)
 
-* Transacao(**#id**, *@id_aluno*, *@id_professor*, quantidade, entrada, saida)
+* Transacao(**#id**, *@id_destinatario*, *@id_remetente*, quantidade, entrada, saida)
 
 * Vantagem(**#id**, *@id_empresa*, nome, descricao, foto)
