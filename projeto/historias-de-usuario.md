@@ -1,4 +1,4 @@
-## Histórias de usuário
+# Histórias de usuário
 
 * Como usuário do sistema, eu gostaria de realizar meu login para que eu possa ter acesso ao Sistema de Mérito.
 

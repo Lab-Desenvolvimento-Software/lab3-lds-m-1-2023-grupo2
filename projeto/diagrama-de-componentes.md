@@ -1,3 +1,3 @@
-## Diagrama de componentes
+# Diagrama de componentes
 
 ![](./imagens/diagrama-de-componentes.png)
