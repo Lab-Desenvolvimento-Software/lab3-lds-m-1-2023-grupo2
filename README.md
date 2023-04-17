@@ -18,8 +18,8 @@
 
 [CÓDIGO](./implementacao/)
 
- ![](./projeto/imagens/colaborador1.jpg)
- ![](./projeto/imagens/colaborador2.jpeg)
+ ![](./colaborador1.jpg)
+ ![](./colaborador2.jpeg)
 
  | Colaboradores |
  | --- |
