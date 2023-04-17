@@ -1,13 +1,13 @@
 # Histórias de usuário
 
-* Como usuário do sistema, eu gostaria de realizar meu login para que eu possa ter acesso ao Sistema de Mérito.
+* Como usuário do sistema, eu gostaria de realizar meu login para que eu possa ter acesso ao Sistema de Moedas.
 
+* Como aluno, eu gostaria de me cadastrar no Sistema de Moedas para não perder a oportunidade de adquirir vantagens.
 * Como aluno, eu gostaria de acumular moedas de mérito para adquirir vantagens e descontos na minha escola.
-* Como aluno, eu gostaria de visualizar meu saldo de moedas para ser capaz de gerenciar minhas trocas por vantagens.
-* Como aluno, eu gostaria de ter acesso ao meu extrato de moedas, para visualizar meus gastos e trocas anteriores.
+* Como aluno, eu gostaria de visualizar meu extrato de moedas para ser capaz de gerenciar minhas trocas por vantagens.
 
-* Como professor, eu gostaria de depositar moedas de mérito aos meus alunos para incentivar bom comportamente e bom trabalho.
-* Como professor, eu gostaria de visualizar meu saldo de moedas para gerenciar a distribuição de moedas para os meus alunos.
-* Como professor, eu gostaria de ter acesso ao meu extrato de moedas, para visualizar meus repasses e recebimentos.
+* Como professor, eu gostaria de distribuir moedas aos meus alunos para incentivar bom comportamento.
+* Como professor, eu gostaria de visualizar meu extrato de moedas para gerenciar a distribuição das minhas moedas para os meus alunos.
 
-* Como representante de uma empresa parceira, eu gostaria de cadastrar vantagens para promover minha marca e a recompensa de bons alunos.
+* Como representante de uma empresa parceira, eu gostaria de me cadastrar no Sistema de Moedas para promover minha marca dentro do mercado estudantil.
+* Como representante de uma empresa parceira, eu gostaria de cadastrar vantagens para divulgar produtos e serviços.
