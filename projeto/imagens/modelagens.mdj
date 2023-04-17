@@ -17,7 +17,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGHjEWagOIw40U="
 					},
-					"name": "UseCaseDiagram1",
+					"name": "Casos de uso",
 					"ownedViews": [
 						{
 							"_type": "UMLUseCaseSubjectView",
@@ -7007,75 +7007,6 @@
 							"isMultiInstance": false
 						}
 					]
-				},
-				{
-					"_type": "UMLInteraction",
-					"_id": "AAAAAAGHjTAExvIa7V4=",
-					"_parent": {
-						"$ref": "AAAAAAGHjHu6kPk3uZk="
-					},
-					"name": "Interaction2",
-					"ownedElements": [
-						{
-							"_type": "UMLSequenceDiagram",
-							"_id": "AAAAAAGHjTAExvIbW9E=",
-							"_parent": {
-								"$ref": "AAAAAAGHjTAExvIa7V4="
-							},
-							"name": "SequenceDiagram1",
-							"ownedViews": [
-								{
-									"_type": "UMLFrameView",
-									"_id": "AAAAAAGHjTAExvIcDDg=",
-									"_parent": {
-										"$ref": "AAAAAAGHjTAExvIbW9E="
-									},
-									"model": {
-										"$ref": "AAAAAAGHjTAExvIbW9E="
-									},
-									"subViews": [
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAGHjTAExvIdRcQ=",
-											"_parent": {
-												"$ref": "AAAAAAGHjTAExvIcDDg="
-											},
-											"font": "Arial;13;0",
-											"left": 32.72998046875,
-											"top": 13,
-											"width": 115.9052734375,
-											"height": 13,
-											"text": "SequenceDiagram1"
-										},
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAGHjTAExvIepfI=",
-											"_parent": {
-												"$ref": "AAAAAAGHjTAExvIcDDg="
-											},
-											"font": "Arial;13;1",
-											"left": 13,
-											"top": 13,
-											"width": 14.72998046875,
-											"height": 13,
-											"text": "sd"
-										}
-									],
-									"font": "Arial;13;0",
-									"left": 8,
-									"top": 8,
-									"width": 692,
-									"height": 592,
-									"nameLabel": {
-										"$ref": "AAAAAAGHjTAExvIdRcQ="
-									},
-									"frameTypeLabel": {
-										"$ref": "AAAAAAGHjTAExvIepfI="
-									}
-								}
-							]
-						}
-					]
 				}
 			],
 			"attributes": [
@@ -7130,7 +7061,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGHjTA5WfI1MxI="
 							},
-							"name": "SequenceDiagram1",
+							"name": "Adquirir vantagem",
 							"ownedViews": [
 								{
 									"_type": "UMLFrameView",
@@ -7149,11 +7080,11 @@
 												"$ref": "AAAAAAGHjTA5WfI3WxU="
 											},
 											"font": "Arial;13;0",
-											"left": 24.72998046875,
-											"top": 5,
-											"width": 115.9052734375,
+											"left": 32.72998046875,
+											"top": 13,
+											"width": 106.498046875,
 											"height": 13,
-											"text": "SequenceDiagram1"
+											"text": "Adquirir vantagem"
 										},
 										{
 											"_type": "LabelView",
@@ -7162,14 +7093,16 @@
 												"$ref": "AAAAAAGHjTA5WfI3WxU="
 											},
 											"font": "Arial;13;1",
-											"left": 5,
-											"top": 5,
+											"left": 13,
+											"top": 13,
 											"width": 14.72998046875,
 											"height": 13,
 											"text": "sd"
 										}
 									],
 									"font": "Arial;13;0",
+									"left": 8,
+									"top": 8,
 									"width": 692,
 									"height": 592,
 									"nameLabel": {
@@ -8451,7 +8384,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGHjTA5WfI0ckw="
 					},
-					"name": "Role1"
+					"name": "Role1",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -8459,7 +8393,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGHjTA5WfI0ckw="
 					},
-					"name": "Role2"
+					"name": "Role2",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -8467,7 +8402,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGHjTA5WfI0ckw="
 					},
-					"name": "Role3"
+					"name": "Role3",
+					"type": ""
 				}
 			]
 		},
@@ -8493,7 +8429,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGHjUqWuPt4iSU="
 							},
-							"name": "SequenceDiagram1",
+							"name": "Verificar extrato",
 							"ownedViews": [
 								{
 									"_type": "UMLFrameView",
@@ -8512,11 +8448,11 @@
 												"$ref": "AAAAAAGHjUqWuPt6ee4="
 											},
 											"font": "Arial;13;0",
-											"left": 24.72998046875,
+											"left": 48.72998046875,
 											"top": 13,
-											"width": 115.9052734375,
+											"width": 91.314453125,
 											"height": 13,
-											"text": "SequenceDiagram1"
+											"text": "Verificar extrato"
 										},
 										{
 											"_type": "LabelView",
@@ -8525,7 +8461,7 @@
 												"$ref": "AAAAAAGHjUqWuPt6ee4="
 											},
 											"font": "Arial;13;1",
-											"left": 5,
+											"left": 29,
 											"top": 13,
 											"width": 14.72998046875,
 											"height": 13,
@@ -8533,6 +8469,7 @@
 										}
 									],
 									"font": "Arial;13;0",
+									"left": 24,
 									"top": 8,
 									"width": 692,
 									"height": 592,
@@ -9189,7 +9126,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGHjUqWuPt3e44="
 					},
-					"name": "Role1"
+					"name": "Role1",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -9197,7 +9135,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGHjUqWuPt3e44="
 					},
-					"name": "Role2"
+					"name": "Role2",
+					"type": ""
 				}
 			]
 		}

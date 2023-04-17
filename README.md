@@ -4,17 +4,19 @@
 
 **Grupo 2**
 
-[CASOS DE USO](./projeto/casos-de-uso.md)
+[CASOS DE USO.](./projeto/casos-de-uso.md)
 
-[HISTÓRIAS DE USUÁRIO](./projeto/historias-de-usuario.md)
+[HISTÓRIAS DE USUÁRIO.](./projeto/historias-de-usuario.md)
 
-[DIAGRAMA DE CLASSES](./projeto/diagrama-de-classes.md)
+[DIAGRAMA DE CLASSES.](./projeto/diagrama-de-classes.md)
 
-[DIAGRAMA DE COMPONENTES](./projeto/diagrama-de-componentes.md)
+[DIAGRAMA DE COMPONENTES.](./projeto/diagrama-de-componentes.md)
 
-[DIAGRAMA DE IMPLANTAÇÃO](./projeto/diagrama-de-implantacao.md)
+[DIAGRAMA DE IMPLANTAÇÃO.](./projeto/diagrama-de-implantacao.md)
 
-[MAPEAMENTO MER](./projeto/mapeamento-diagrama-de-classes-para-MER.md)
+[MAPEAMENTO MER.](./projeto/mapeamento-diagrama-de-classes-para-MER.md)
+
+[DIAGRAMAS DE SEQUÊNCIA.](./projeto/diagramas-de-sequencias.md)
 
 [CÓDIGO](./implementacao/)
 
