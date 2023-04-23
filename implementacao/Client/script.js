@@ -1,18 +1,59 @@
 const TABLE_BODY = document.querySelector('#table-hidder>table>tbody')
 
-const whichEntity = (entity)=> {
+// ALUNOS
+
+const getAlunos = async() => {
     TABLE_BODY.innerHTML = ''
-    if(entity == 0){
-        getEntity('alunos')
-    }else if(entity == 1){
-        getEntity('empresas')
+    try{
+        const data = await fetch('http://localhost:2345/alunos')
+        const rows = await data.json()
+        console.log(erro)
+    }catch(erro){
+        console.log(erro)
+        TABLE_BODY.innerHTML = `
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>Mark</td>
+            <td><button onclick="deleteAluno()" class="delete-button">Excluir</button></td>
+        </tr>
+        `
     }
 }
 
-const getEntity = async() => {
-    try{
-        const data = await fetch('http://')
-    }catch(erro){
+const deleteAluno = async() => {
+    alert('deletado')
+}
 
+// EMPRESAS
+
+const getEmpresas = async() => {
+    TABLE_BODY.innerHTML = ''
+    try{
+        const data = await fetch('http://localhost:2345/alunos')
+        const rows = await data.json()
+        console.log(erro)
+    }catch(erro){
+        console.log(erro)
+        TABLE_BODY.innerHTML = `
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td><button onclick="deleteEmpresa()" class="delete-button">Excluir</button></td>
+        </tr>
+        `
     }
+}
+
+const deleteEmpresa = async() => {
+    alert('deletada')
 }

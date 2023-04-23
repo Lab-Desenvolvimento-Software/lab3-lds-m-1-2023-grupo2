@@ -72,6 +72,12 @@ h2{
     width: 90%;
     margin: 20px auto;
 }
+.delete-button{
+    outline: none;
+    border: none;
+    color: var(--negative-color);
+    font-weight: bold;
+}
 
 @media screen and (max-width: 750px){
     header{
