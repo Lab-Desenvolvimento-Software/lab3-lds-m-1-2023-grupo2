@@ -10,7 +10,8 @@
 | [DIAGRAMA DE COMPONENTES.](./projeto/diagrama-de-componentes.md) |
 | [DIAGRAMA DE IMPLANTAÇÃO.](./projeto/diagrama-de-implantacao.md) |
 | [MAPEAMENTO MER.](./projeto/mapeamento-diagrama-de-classes-para-MER.md) |
-| [DIAGRAMAS DE SEQUÊNCIA.](./projeto/diagramas-de-sequencias.md) |
+| [DIAGRAMAS DE SEQUÊNCIA.](./projeto/diagramas-de-sequencia.md) |
+| [DIAGRAMAS DE SEQUÊNCIA DE SISTEMA.](./projeto/diagramas-de-sequencia-de-sistema.md) |
 | [CÓDIGO](./implementacao/) |
 
 | Colaboradores | Foto |

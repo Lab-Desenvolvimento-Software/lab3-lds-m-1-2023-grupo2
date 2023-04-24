@@ -1,4 +1,4 @@
-# Diagrama de sequências
+# Diagrama de sequência
 
 * UC 3
 
