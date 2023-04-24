@@ -7,7 +7,7 @@ class Alunos extends Model {
 
         NOME: {
           type: Sequelize.STRING,
-  
+
         },
         EMAIL:{
           type: Sequelize.STRING,
@@ -15,12 +15,12 @@ class Alunos extends Model {
         CPF:{
           type: Sequelize.STRING,
         },
-  
+
         RG:{
-          type: Sequelize.FLOAT,
+          type: Sequelize.STRING,
         },
         LOGRADOURO:{
-          type: Sequelize.FLOAT,
+          type: Sequelize.STRING,
         },
         CIDADE:{
           type: Sequelize.STRING,
@@ -29,7 +29,7 @@ class Alunos extends Model {
           type: Sequelize.STRING,
         },
         NUMERO:{
-          type: Sequelize.FLOAT,
+          type: Sequelize.STRING,
         },
         INSTITUICAO:{
           type: Sequelize.STRING,
@@ -50,7 +50,7 @@ class Alunos extends Model {
 
   static associate(models) {
    // inserir associacoes
-   
+
 
   }
 }

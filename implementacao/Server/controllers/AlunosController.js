@@ -6,6 +6,7 @@ import Alunos from '../models/Alunos';
 
 class AlunosController{
     async index(req, res){
+      console.log('pqp')
         const {
             NOME,
             CPF,
@@ -14,7 +15,7 @@ class AlunosController{
             updatedBefore,
             updatedAfter,
             sort,
-            
+
         } = req.query;
 
         //localhost:{port}/produtos?nome=iphone
@@ -33,7 +34,7 @@ class AlunosController{
                 },
             };
         }
-       
+
         if (createdBefore) {
             where = {
               ...where,
@@ -42,7 +43,7 @@ class AlunosController{
               },
             };
           }
-      
+
           if (createdAfter) {
             where = {
               ...where,
@@ -51,7 +52,7 @@ class AlunosController{
               },
             };
         }
-      
+
           if (updatedBefore) {
             where = {
               ...where,
@@ -60,7 +61,7 @@ class AlunosController{
               },
             };
         }
-      
+
           if (updatedAfter) {
             where = {
               ...where,
@@ -87,7 +88,7 @@ class AlunosController{
 
     async create(req, res) {
 
-        try{        
+        try{
           await Alunos.create({
             NOME: req.body.nome,
             EMAIL: req.body.email,
@@ -106,14 +107,14 @@ class AlunosController{
           },{
             // include: [ inserir associacao aqui ]
           });
-          return res.status(200).json('Aluno cadastrado com sucesso!');   
+          return res.status(200).json('Aluno cadastrado com sucesso!');
         } catch (error) {
           return res.status(500).json({ error });
         }
     }
 
     async update(req, res) {
-        try{        
+        try{
             await Alunos.upsert({
             id: req.params.id,
 
@@ -130,17 +131,17 @@ class AlunosController{
             MOEDAS: req.body.moedas,
 
           });
-          return res.status(200).json('Informações alteradas com sucesso!');   
+          return res.status(200).json('Informações alteradas com sucesso!');
         } catch (error) {
           return res.status(500).json({ error });
         }
     }
   async delete(req, res) {
 
-    
+
     try {
 
-    
+
 
       await Alunos.destroy({ where: { id: req.params.id } });
       res.status(200).json('Aluno Excluido com sucesso!');

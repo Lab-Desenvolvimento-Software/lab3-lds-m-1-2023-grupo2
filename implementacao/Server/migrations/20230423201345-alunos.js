@@ -4,7 +4,7 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
 
-    await queryInterface.createTable('alunos', { 
+    await queryInterface.createTable('alunos', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -26,11 +26,11 @@ module.exports = {
       },
 
       RG:{
-        type: Sequelize.FLOAT,
+        type: Sequelize.STRING,
         allowNull: true,
       },
       LOGRADOURO:{
-        type: Sequelize.FLOAT,
+        type: Sequelize.STRING,
         allowNull: true,
       },
       CIDADE:{
@@ -42,7 +42,7 @@ module.exports = {
         allowNull: true,
       },
       NUMERO:{
-        type: Sequelize.FLOAT,
+        type: Sequelize.STRING,
         allowNull: true,
       },
       INSTITUICAO:{
@@ -59,7 +59,7 @@ module.exports = {
       },
 
 
-      
+
       updatedAt: {
         type: Sequelize.DATE,
         allowNull: false,
@@ -75,6 +75,6 @@ module.exports = {
   async down (queryInterface, Sequelize) {
 
     await queryInterface.dropTable('alunos');
-    
+
   }
 };
