@@ -1,4 +1,16 @@
 const TABLE_BODY = document.querySelector('#table-hidder>table>tbody')
+const POST_DIV = document.getElementById('post-div')
+
+POST_DIV.style.display = 'none'
+function togglePostDiv(){
+    if(POST_DIV.style.display == 'none'){
+        POST_DIV.style.display = 'block'
+    }else{
+        POST_DIV.style.display = 'none'
+    }
+}
+
+// ENTIDADES =======================================
 
 // ALUNOS
 
@@ -33,6 +45,10 @@ const deleteAluno = async() => {
     alert('deletado')
 }
 
+const postAluno = async() => {
+    alert('deletado')
+}
+
 // EMPRESAS
 
 const getEmpresas = async() => {
@@ -56,4 +72,8 @@ const getEmpresas = async() => {
 
 const deleteEmpresa = async() => {
     alert('deletada')
+}
+
+const postEmpresa = async() => {
+    alert('deletado')
 }

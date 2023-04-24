@@ -25,7 +25,10 @@
         </nav>
     </header>
 
-    <h2>Alunos cadastrados</h2>
+    <div id="actions">
+        <h2>Alunos cadastrados</h2>
+        <button type="button" class="btn btn-warning" onclick="togglePostDiv()">Cadastrar novo aluno</button>
+    </div>
 
     <div id="table-hidder">
         <table class="table">
@@ -49,6 +52,50 @@
 
             </tbody>
         </table>
+    </div>
+
+    <div id="post-div">
+        <h3>Novo aluno</h3>
+        <form action="">
+            <div class="form-floating mb-3">
+                <input class="form-control" id="floatingInput" placeholder="name@example.com" name="nome">
+                <label for="floatingInput">Nome</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="floatingInput" placeholder="name@example.com" type="number" name="email">
+                <label for="floatingInput">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="floatingInput" placeholder="name@example.com" name="rg">
+                <label for="floatingInput">RG</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="floatingInput" placeholder="name@example.com" type="number" name="logradouro">
+                <label for="floatingInput">Logradouro</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="floatingInput" placeholder="name@example.com" name="cidade">
+                <label for="floatingInput">Cidade</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="floatingInput" placeholder="name@example.com" type="number" name="bairro">
+                <label for="floatingInput">Bairro</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="floatingInput" placeholder="name@example.com" name="numero">
+                <label for="floatingInput">Número</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="floatingInput" placeholder="name@example.com" type="number" name="instituicao">
+                <label for="floatingInput">Instituição</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="floatingInput" placeholder="name@example.com" name="curso">
+                <label for="floatingInput">Curso</label>
+            </div>
+            <button type="button" class="btn btn-danger" onclick="togglePostDiv()">Cancelar</button>
+            <button type="submit" class="btn btn-warning" onclick="postEmpresa()">Cadastrar</button>
+        </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

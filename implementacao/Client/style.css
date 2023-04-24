@@ -61,6 +61,13 @@ header h1{
     background-color: var(--black);
 }
 
+#actions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+}
 h2{
     text-align: center;
     font-size: 25px;
@@ -77,6 +84,20 @@ h2{
     border: none;
     color: var(--negative-color);
     font-weight: bold;
+}
+
+#post-div{
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    width: 330px;
+    transform: translate(-50%);
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 0.3em var(--grey);
+    max-height: 400px;
+    overflow-y: scroll;
 }
 
 @media screen and (max-width: 750px){
