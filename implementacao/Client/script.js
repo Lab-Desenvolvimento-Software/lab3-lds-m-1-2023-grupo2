@@ -254,7 +254,7 @@ const updateEmpresa = async(e)=> {
     }
 }
 
-// EVENTOS
+// EVENTOS ========================================
 
 POST_FORM_ALUNO.addEventListener('submit', postAluno)
 POST_FORM_EMPRESA.addEventListener('submit', postEmpresa)
