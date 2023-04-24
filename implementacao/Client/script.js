@@ -8,6 +8,8 @@ const UPDATE_DIV = document.getElementById('update-div')
 const UPDATE_FORM_ALUNO = document.getElementById('update-form-aluno')
 const UPDATE_FORM_EMPRESA = document.getElementById('update-form-empresa')
 
+let edit_id;
+
 POST_DIV.style.display = 'none'
 function togglePostDiv(){
     if(POST_DIV.style.display == 'none'){
@@ -105,6 +107,7 @@ const postAluno = async(e) => {
 
 const getSingleAluno = async(id)=> {
     toggleUpdateDiv()
+    edit_id = id
     try{
         const data = await fetch(`http://localhost:2345/alunos/${id}`)
         const aluno = await data.json()
@@ -125,10 +128,10 @@ const getSingleAluno = async(id)=> {
     }
 }
 
-const updateAluno = async(e, id)=> {
+const updateAluno = async(e)=> {
     e.preventDefault()
     try{
-        const data = await fetch(`http://localhost:2345/alunos/${id}`, {
+        const data = await fetch(`http://localhost:2345/alunos/${edit_id}`, {
             method: "PUT",
             body: JSON.stringify({
                 nome: e.target.nome.value,
@@ -216,6 +219,7 @@ const postEmpresa = async(e) => {
 
 const getSingleEmpresa = async(id)=> {
     toggleUpdateDiv()
+    edit_id = id
     try{
         const data = await fetch(`http://localhost:2345/empresas/${id}`)
         const empresa = await data.json()
@@ -229,10 +233,10 @@ const getSingleEmpresa = async(id)=> {
     }
 }
 
-const updateEmpresa = async(e, id)=> {
+const updateEmpresa = async(e)=> {
     e.preventDefault()
     try{
-        const data = await fetch(`http://localhost:2345/empresas/${id}`, {
+        const data = await fetch(`http://localhost:2345/empresas/${edit_id}`, {
             method: "PUT",
             body: JSON.stringify({
                 nome: e.target.nome.value,
