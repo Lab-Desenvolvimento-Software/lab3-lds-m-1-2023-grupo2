@@ -79,14 +79,17 @@ h2{
     width: 90%;
     margin: 20px auto;
 }
-.delete-button{
+.delete-button, .edit-button{
     outline: none;
     border: none;
     color: var(--negative-color);
     font-weight: bold;
 }
+.edit-button{
+    color: var(--positive-color);
+}
 
-#post-div{
+#post-div, #update-div{
     position: fixed;
     top: 200px;
     left: 50%;

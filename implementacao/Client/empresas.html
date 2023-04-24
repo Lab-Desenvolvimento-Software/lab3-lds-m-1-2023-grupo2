@@ -63,6 +63,23 @@
         <form id="post-form-aluno"></form>
     </div>
 
+    <div id="update-div">
+        <h3>Editar empresa</h3>
+        <form id="update-form-empresa">
+            <div class="form-floating mb-3">
+                <input required class="form-control" id="floatingInput" placeholder="name@example.com" name="nome">
+                <label for="floatingInput">Nome</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input required class="form-control" id="floatingInput" placeholder="name@example.com" type="number" name="cnpj">
+                <label for="floatingInput">CNPJ</label>
+            </div>
+            <button type="button" class="btn btn-danger" onclick="toggleUpdateDiv()">Cancelar</button>
+            <button type="submit" class="btn btn-warning">Cadastrar</button>
+        </form>
+        <form id="update-form-aluno"></form>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
 </body>
