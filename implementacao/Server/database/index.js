@@ -1,14 +1,18 @@
 import config from '../config/bd'
 import {Sequelize} from 'sequelize'
 
-import Produtos from '../models/Alunos';
-import Usuarios from '../models/Empresas';
+import Alunos from '../models/Alunos';
+import Empresas from '../models/Empresas';
+import Professores from '../models/Professores';
+import Transacoes from '../models/Transacoes';
+import Usuarios from '../models/Usuarios';
+
 //importar modelos aqui
 
 
 //inicializa os modelos e conecta ao bd
 
-const models= [Produtos, Usuarios]
+const models= [Alunos, Empresas, Professores, Transacoes, Usuarios]
 
 class Database{
     constructor(){

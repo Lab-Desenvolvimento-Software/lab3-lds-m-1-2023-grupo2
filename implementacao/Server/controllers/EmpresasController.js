@@ -1,6 +1,6 @@
 import { Op } from 'sequelize';
 import { parseISO } from 'date-fns';
-import fs from 'fs'
+
 import Empresas from '../models/Empresas';
 
 

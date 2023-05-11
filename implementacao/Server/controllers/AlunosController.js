@@ -1,84 +1,15 @@
 import { Op } from 'sequelize';
 import { parseISO } from 'date-fns';
-import fs from 'fs'
+
 import Alunos from '../models/Alunos';
+import Usuarios from '../models/Usuarios';
 
 
 class AlunosController{
     async index(req, res){
-      console.log('pqp')
-        const {
-            NOME,
-            CPF,
-            createdBefore,
-            createdAfter,
-            updatedBefore,
-            updatedAfter,
-            sort,
-
-        } = req.query;
-
-        //localhost:{port}/produtos?nome=iphone
-
-        const page = req.query.page || 1;
-        const limit = parseInt(req.query.limit) || 25;
-
-        let where = {};
-        let order = [];
-
-        if(NOME){
-            where = {
-                ...where,
-                NOME:{
-                    [Op.like]: NOME
-                },
-            };
-        }
-
-        if (createdBefore) {
-            where = {
-              ...where,
-              createdAt: {
-                [Op.gte]: parseISO(createdBefore),
-              },
-            };
-          }
-
-          if (createdAfter) {
-            where = {
-              ...where,
-              createdAt: {
-                [Op.lte]: parseISO(createdAfter),
-              },
-            };
-        }
-
-          if (updatedBefore) {
-            where = {
-              ...where,
-              updatedAt: {
-                [Op.gte]: parseISO(updatedBefore),
-              },
-            };
-        }
-
-          if (updatedAfter) {
-            where = {
-              ...where,
-              updatedAt: {
-                [Op.lte]: parseISO(updatedAfter),
-              },
-            };
-        }
-        if (sort) { // localhost:{PORT}?sort=id:desc,name
-            order = sort.split(',').map((item) => item.split(':'));
-        }
+      
         try {
             const alunos = await Alunos.findAll({
-              where,
-              order,
-              limit,
-              offset: limit * page - limit,
             })
             return res.status(200).json({alunos});
           } catch (error) {
@@ -86,11 +17,12 @@ class AlunosController{
         }
     }
 
+
+
     async create(req, res) {
 
-        try{
-          await Alunos.create({
-            NOME: req.body.nome,
+      const alunos = {
+          NOME: req.body.nome,
             EMAIL: req.body.email,
             CPF: req.body.cpf,
             RG: req.body.rg,
@@ -100,18 +32,25 @@ class AlunosController{
             NUMERO: req.body.numero,
             INSTITUICAO: req.body.instituicao,
             CURSO: req.body.curso,
-            MOEDAS: 0,
+            MOEDAS: 0
+      }
 
-            // ASSOCIACAO AQUI
+      try{
+        await Usuarios.create({
+          TIPO: "aluno",
+          LOGIN: req.body.login,
+          SENHA: req.body.senha,
 
-          },{
-            // include: [ inserir associacao aqui ]
-          });
-          return res.status(200).json('Aluno cadastrado com sucesso!');
-        } catch (error) {
-          return res.status(500).json({ error });
-        }
-    }
+          alunos: alunos
+
+        },{
+           include: [Alunos]
+        });
+        return res.status(200).json('Aluno cadastrado com sucesso!');
+      } catch (error) {
+        return res.status(500).json({ error });
+      }
+  }
 
     async update(req, res) {
         try{
@@ -139,10 +78,9 @@ class AlunosController{
   async delete(req, res) {
 
 
+    //colocar destroy no usuario ao inves do aluno
+
     try {
-
-
-
       await Alunos.destroy({ where: { id: req.params.id } });
       res.status(200).json('Aluno Excluido com sucesso!');
     } catch (error) {
@@ -150,12 +88,17 @@ class AlunosController{
     }
   }
   async show(req, res) {
+    
     try {
       const aluno = await Alunos.findByPk(req.params.id);
       res.status(200).json(aluno);
     } catch (error) {
       res.status(500).json({ error });
     }
+  }
+
+  async adicionarMoedas(quantidade){
+
   }
 
 

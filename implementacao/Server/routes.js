@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import alunos from './controllers/AlunosController'
 import empresas from './controllers/EmpresasController'
+import professores from './controllers/ProfessorController'
 
 
 //controllers
@@ -22,4 +23,8 @@ router.post('/empresas', empresas.create)
 router.delete('/empresas/:id', empresas.delete)
 router.put('/empresas/:id', empresas.update)
 router.get('/empresas/:id', empresas.show)
+
+//professores
+
+router.get('/professorMoedas/:id', professores.showMoedas)
 module.exports = router

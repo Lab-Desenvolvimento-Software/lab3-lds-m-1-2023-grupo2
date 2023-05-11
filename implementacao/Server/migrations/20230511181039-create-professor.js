@@ -4,7 +4,7 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
 
-    await queryInterface.createTable('empresas', { 
+    await queryInterface.createTable('professores', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -16,10 +16,30 @@ module.exports = {
         allowNull: true,
 
       },
-      CNPJ: {
+     
+      CPF:{
         type: Sequelize.STRING,
         allowNull: true,
-
+      },
+      DEPARTAMENTO:{
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      INSTITUICAO:{
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+    
+      MOEDAS:{
+        type: Sequelize.INTEGER,
+        allowNull: true,
+      },
+      usuarioId:{
+        type: Sequelize.INTEGER,
+        references: { model: 'usuarios', key: 'id'},
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+        allowNull: false,
       },
       updatedAt: {
         type: Sequelize.DATE,
@@ -35,7 +55,7 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
 
-    await queryInterface.dropTable('empresas');
-    
+    await queryInterface.dropTable('professores');
+
   }
 };

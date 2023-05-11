@@ -24,7 +24,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
       },
-
       RG:{
         type: Sequelize.STRING,
         allowNull: true,
@@ -54,12 +53,16 @@ module.exports = {
         allowNull: true,
       },
       MOEDAS:{
-        type: Sequelize.FLOAT,
+        type: Sequelize.INTEGER,
         allowNull: true,
       },
-
-
-
+      usuarioId:{
+        type: Sequelize.INTEGER,
+        references: { model: 'usuarios', key: 'id'},
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+        allowNull: false,
+      },
       updatedAt: {
         type: Sequelize.DATE,
         allowNull: false,

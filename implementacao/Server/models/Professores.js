@@ -1,6 +1,6 @@
 import Sequelize, { Model } from 'sequelize';
 
-class Alunos extends Model {
+class Professores extends Model {
   static init(sequelize) {
     super.init(
       {
@@ -9,41 +9,26 @@ class Alunos extends Model {
           type: Sequelize.STRING,
 
         },
-        EMAIL:{
-          type: Sequelize.STRING,
-        },
+
         CPF:{
           type: Sequelize.STRING,
         },
 
-        RG:{
+        DEPARTAMENTO:{
           type: Sequelize.STRING,
         },
-        LOGRADOURO:{
-          type: Sequelize.STRING,
-        },
-        CIDADE:{
-          type: Sequelize.STRING,
-        },
-        BAIRRO:{
-          type: Sequelize.STRING,
-        },
-        NUMERO:{
-          type: Sequelize.STRING,
-        },
+
         INSTITUICAO:{
           type: Sequelize.STRING,
         },
-        CURSO:{
-          type: Sequelize.STRING,
-        },
+
         MOEDAS:{
           type: Sequelize.INTEGER,
         },
       },
       {
         sequelize,
-        modelName: 'alunos',
+        modelName: 'professores',
       },
     );
   }
@@ -55,4 +40,4 @@ class Alunos extends Model {
   }
 }
 
-export default Alunos;
+export default Professores;
