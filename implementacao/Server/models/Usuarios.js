@@ -9,6 +9,7 @@ class Usuarios extends Model {
         TIPO:Sequelize.STRING,
         LOGIN: Sequelize.STRING,
         SENHA: Sequelize.STRING,
+        NOME: Sequelize.STRING,
 
       },
       {
@@ -22,7 +23,8 @@ class Usuarios extends Model {
     this.hasOne(models.alunos);
     this.hasOne(models.professores);
 
-    this.hasMany(models.transacoes);
+    this.hasMany(models.transacoes, { foreignKey: 'destinatarioId' });
+    this.hasMany(models.transacoes, { foreignKey: 'remetenteId' });
 
   }
 

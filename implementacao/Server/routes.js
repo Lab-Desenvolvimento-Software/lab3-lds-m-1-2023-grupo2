@@ -2,7 +2,8 @@ import { Router } from 'express';
 import alunos from './controllers/AlunosController'
 import empresas from './controllers/EmpresasController'
 import professores from './controllers/ProfessorController'
-
+import login from './controllers/LoginController'
+import transacoes from './controllers/TransacoesController'
 
 //controllers
 
@@ -25,6 +26,17 @@ router.put('/empresas/:id', empresas.update)
 router.get('/empresas/:id', empresas.show)
 
 //professores
+
+
+
+//transacoes
+
+router.get('/transacoes/:id', transacoes.index)
+router.post('/transacoes/:id', transacoes.create)
+
+//login
+
+router.post('/login', login.login)
 
 router.get('/professorMoedas/:id', professores.showMoedas)
 module.exports = router

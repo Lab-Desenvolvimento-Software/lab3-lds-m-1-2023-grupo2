@@ -11,11 +11,6 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
       },
-      NOME: {
-        type: Sequelize.STRING,
-        allowNull: true,
-
-      },
      
       CPF:{
         type: Sequelize.STRING,

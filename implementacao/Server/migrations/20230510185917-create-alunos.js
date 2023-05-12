@@ -11,11 +11,7 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
       },
-      NOME: {
-        type: Sequelize.STRING,
-        allowNull: true,
-
-      },
+      
       EMAIL:{
         type: Sequelize.STRING,
         allowNull: true,

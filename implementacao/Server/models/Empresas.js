@@ -5,9 +5,7 @@ class Empresas extends Model {
     super.init(
       {
 
-        NOME: {
-          type: Sequelize.STRING,  
-        },
+  
         CNPJ: {
           type: Sequelize.STRING,  
         },

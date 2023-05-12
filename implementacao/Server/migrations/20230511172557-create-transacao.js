@@ -18,6 +18,11 @@ module.exports = {
         onDelete: 'CASCADE',
         allowNull: false,
       },
+      NOME_DESTINATARIO: {
+        type: Sequelize.STRING,
+        allowNull: true,
+
+      },
       remetenteId:{
         type: Sequelize.INTEGER,
         references: { model: 'usuarios', key: 'id'},
@@ -26,14 +31,6 @@ module.exports = {
         allowNull: false,
       },
       QUANTIDADE: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      ENTRADA: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      SAIDA: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },

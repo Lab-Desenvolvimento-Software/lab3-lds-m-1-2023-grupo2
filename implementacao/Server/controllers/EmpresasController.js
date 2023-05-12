@@ -4,6 +4,8 @@ import { parseISO } from 'date-fns';
 import Empresas from '../models/Empresas';
 
 
+//TODO FAZER AJUSTES EM EMPRESAS!!!!!
+
 class EmpresasController{
     async index(req, res){
         const {

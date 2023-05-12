@@ -7,8 +7,9 @@ class Transacoes extends Model {
       {
 
         QUANTIDADE:Sequelize.INTEGER,
-        ENTRADA: Sequelize.INTEGER,
-        SAIDA: Sequelize.INTEGER,
+        NOME_DESTINATARIO: Sequelize.STRING,
+
+
 
       },
       {

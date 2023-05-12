@@ -9,37 +9,33 @@ class TransacoesController{
 
     async index(req,res){
         try {
-            const transacoes = await Transacoes.findAll({where:{
+            const transacoesSaida = await Transacoes.findAll({where:{
                 remetenteId: req.params.id
-            }
-
-            })
-            return res.status(200).json({transacoes});
+            }})
+            const transacoesEntrada = await Transacoes.findAll({where:{
+              destinatarioId: req.params.id
+          }})
+            return res.status(200).json({entrada: transacoesEntrada, saida: transacoesSaida});
           } catch (error) {
             return res.status(500).json({ error });
         }
     }
     
   async create(req, res) {
-
-
-
-
-
-
-
     // front tem que enviar um tipo de usuario
 
     if(req.body.tipo_usuario=='professor'){
-        professor.subtrairMoedas(req.body.quantidade)
-        aluno.adicionarMoedas(req.body.quantidade)
+        professor.subtrairMoedas(req.body.quantidade, req.params.id )
+        aluno.adicionarMoedas(req.body.quantidade, req.body.destinatario)
     }
 
 
     try {
       await Transacoes.create({
         QUANTIDADE: req.body.quantidade,
+
         remetenteId: req.params.id,
+
         destinatarioId: req.body.destinatario
       }
       );
@@ -48,8 +44,6 @@ class TransacoesController{
       res.status(500).json({ error });
     }
   }
-
-
 
 }
 

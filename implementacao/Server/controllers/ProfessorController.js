@@ -1,4 +1,5 @@
 
+import { Sequelize } from 'sequelize';
 import Professores from '../models/Professores';
 
 
@@ -22,7 +23,25 @@ class ProfessorController{
     
   }
 
-  async subtrairMoedas(quantidade){
+  async subtrairMoedas(quantidade,id){
+
+
+    console.log('subtraindo moedas')
+
+    try {
+      await Professores.update({
+        MOEDAS: Sequelize.literal(`MOEDAS - ${quantidade}`)
+      }, {
+        where: { usuarioId: id }
+      });
+      return "sucesso";
+    } catch (error) {
+      console.log(error)
+      return error;
+    }
+
+
+  }
 
   }
 
@@ -31,6 +50,6 @@ class ProfessorController{
   
 
 
-}
+
 
 export default new ProfessorController();

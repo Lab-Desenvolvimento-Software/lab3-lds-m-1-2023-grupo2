@@ -1,4 +1,4 @@
-import { Op } from 'sequelize';
+import { Op, Sequelize } from 'sequelize';
 import { parseISO } from 'date-fns';
 
 import Alunos from '../models/Alunos';
@@ -22,7 +22,7 @@ class AlunosController{
     async create(req, res) {
 
       const alunos = {
-          NOME: req.body.nome,
+          
             EMAIL: req.body.email,
             CPF: req.body.cpf,
             RG: req.body.rg,
@@ -35,11 +35,14 @@ class AlunosController{
             MOEDAS: 0
       }
 
+
+      //MUDAR ISSO NO FRONT
       try{
         await Usuarios.create({
           TIPO: "aluno",
           LOGIN: req.body.login,
           SENHA: req.body.senha,
+          NOME: req.body.nome,
 
           alunos: alunos
 
@@ -56,8 +59,6 @@ class AlunosController{
         try{
             await Alunos.upsert({
             id: req.params.id,
-
-            NOME: req.body.nome,
             EMAIL: req.body.email,
             CPF: req.body.cpf,
             RG: req.body.rg,
@@ -97,7 +98,16 @@ class AlunosController{
     }
   }
 
-  async adicionarMoedas(quantidade){
+  async adicionarMoedas(quantidade, id){
+
+    try {
+      await Alunos.update({
+        MOEDAS: Sequelize.literal(`MOEDAS + ${quantidade}`)
+      },{where: {usuarioId: id}})
+      return "sucesso"
+    } catch (error) {
+      return error
+    }
 
   }
 

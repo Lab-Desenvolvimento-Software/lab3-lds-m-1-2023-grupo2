@@ -5,10 +5,6 @@ class Professores extends Model {
     super.init(
       {
 
-        NOME: {
-          type: Sequelize.STRING,
-
-        },
 
         CPF:{
           type: Sequelize.STRING,

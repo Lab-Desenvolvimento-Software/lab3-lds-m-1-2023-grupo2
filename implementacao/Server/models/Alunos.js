@@ -5,10 +5,7 @@ class Alunos extends Model {
     super.init(
       {
 
-        NOME: {
-          type: Sequelize.STRING,
-
-        },
+        
         EMAIL:{
           type: Sequelize.STRING,
         },
