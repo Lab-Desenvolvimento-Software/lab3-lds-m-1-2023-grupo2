@@ -78,9 +78,7 @@ class AlunosController{
     }
   async delete(req, res) {
 
-
     //colocar destroy no usuario ao inves do aluno
-
     try {
       await Alunos.destroy({ where: { id: req.params.id } });
       res.status(200).json('Aluno Excluido com sucesso!');
@@ -110,7 +108,6 @@ class AlunosController{
     }
 
   }
-
 
 }
 
