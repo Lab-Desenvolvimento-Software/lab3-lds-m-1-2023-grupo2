@@ -1,19 +1,23 @@
 // Estilo
 import './App.css';
-// libs
+// Libs
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // Componentes
 import Alunos from './paginas/Alunos.js'
 import Empresas from './paginas/Empresas.js'
+import Login from './paginas/Login.js'
 import Header from './componentes/Header.js'
 
 function App() {
+
   return (
     <>
 
     <BrowserRouter>
 
       <Routes>
+
+        <Route path={'/login'} element={<Login/>}/>
 
         <Route path={'/'} element={<Header/>}>
 

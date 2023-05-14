@@ -3,9 +3,17 @@ import logo from '../imagens/moeda-40x40.png'
 // Estilo
 import './Header.css'
 // Libs
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const Header = ()=> {
+
+    const jerson = useNavigate()
+
+    useEffect(()=> {
+        jerson('/login')
+    },[])
+
     return(
         <>
         <header>
