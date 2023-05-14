@@ -1,0 +1,67 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/*
+font-family: 'Inconsolata', monospace;
+font-family: 'Inter', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Quicksand', sans-serif;
+*/
+html{
+    scroll-behavior: smooth;
+}
+:root{
+    --positive-color: rgb(0, 100, 0);
+    --negative-color:rgb(194, 0, 0);
+    --primary: rgb(255, 150, 0);
+    --primary-light: rgb(242, 190, 0);
+    --secondary: rgb(0, 45, 80);
+    --secondary-light: rgb(0, 75, 130);
+    --secondary-lighter: rgb(100, 155, 210);
+    --secondary-lightest: rgb(170, 210, 250);
+
+
+    --transparent:transparent;
+    --white: #fff;
+    --lightergrey: #eee;
+    --lightgrey: #ccc;
+    --grey: #aaa;
+    --darkgrey: #666;
+    --darkergrey: #333;
+    --black: #000;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    color:inherit;
+}
+.button{
+    padding: 7px 15px;
+    background-image: linear-gradient(to left, var(--primary), var(--primary-light));
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 0.2em var(--secondary-light);
+    color: var(--white);
+    white-space: nowrap;
+}
+.button:hover{
+    box-shadow: 0 0 0.2em var(--secondary-lighter);
+}
+strong{
+    color: var(--primary-light)
+}
+h2{
+    text-align: center;
+    color: var(--grey);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
