@@ -16,9 +16,8 @@ const Empresas = ()=> {
 
     const getEmpresas = async()=> {
         try{
-            const res = await axios.get(`${server}/alunos`)
-            // setEmpresas(res)
-            console.log(res)
+            const res = await axios.get(`${server}/empresas`)
+            setEmpresas(res.data.empresas)
         }catch(erro){
             console.log(erro)
         }
@@ -26,8 +25,7 @@ const Empresas = ()=> {
 
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'nome', headerName: 'Nome', width: 130 },
-        { field: 'cnpj', headerName: 'CNPJ', width: 130 }
+        { field: 'CNPJ', headerName: 'CNPJ', width: 200 },
     ]
 
     return(

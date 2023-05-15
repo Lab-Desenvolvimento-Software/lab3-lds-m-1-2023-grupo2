@@ -17,8 +17,7 @@ const Alunos = ()=> {
     const getAlunos = async()=> {
         try{
             const res = await axios.get(`${server}/alunos`)
-            // setAlunos(res)
-            console.log(res)
+            setAlunos(res.data.alunos)
         }catch(erro){
             console.log(erro)
         }
@@ -26,8 +25,9 @@ const Alunos = ()=> {
 
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'nome', headerName: 'Nome', width: 130 },
-        { field: 'cpf', headerName: 'CPF', width: 130 }
+        { field: 'MOEDAS', headerName: 'Moedas', width: 100 },
+        { field: 'EMAIL', headerName: 'E-mail', width: 130 },
+        { field: 'CPF', headerName: 'CPF', width: 130 },
     ]
 
     return(

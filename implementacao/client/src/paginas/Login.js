@@ -23,11 +23,12 @@ const Login = ()=> {
         e.preventDefault()
         try{
             let data = new FormData(form.current)
+
             const res = await axios.post(`${server}/login`, data, {headers: {'Content-Type': 'application/json'}})
-            console.log(res.data.id)
-            console.log(res.data.TIPO)
+
             sessionStorage.setItem("id", `${res.data.id}`);
             sessionStorage.setItem("tipo", `${res.data.TIPO}`);
+
             navigate('/alunos')
             toast.success('Login efetuado com sucesso.', {toastId: 'sucesso'})
         }catch(erro){
@@ -41,10 +42,10 @@ const Login = ()=> {
 
             <img src={logo} alt="Ícone de moeda"/>
 
-           <TextField required fullWidth id="username" label="Usuário" variant="outlined" name={'login'}/>
-           <TextField required type="password" fullWidth id="password" label="Senha" variant="outlined" name={'senha'}/>
+            <TextField required fullWidth id="username" label="Usuário" variant="outlined" name={'login'}/>
+            <TextField required type="password" fullWidth id="password" label="Senha" variant="outlined" name={'senha'}/>
 
-           <Button type={'submit'} fullWidth variant={'contained'}>Entrar</Button>
+            <Button type={'submit'} fullWidth variant={'contained'}>Entrar</Button>
 
         </form>
     )
