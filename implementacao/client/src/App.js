@@ -27,7 +27,7 @@ function App() {
 
           <Route path={'/alunos'} element={<Alunos/>}/>
           <Route path={'/empresas'} element={<Empresas/>}/>
-          <Route path={'/extrato'} element={<Extrato/>}/>
+          <Route path={'/extrato/:tipo'} element={<Extrato/>}/>
 
         </Route>
 
