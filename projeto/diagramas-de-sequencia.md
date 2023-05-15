@@ -6,11 +6,11 @@
 
 * UC 4
 
-![](./imagens/diagrama-de-sequencia-US4.png)
+![](./imagens/UC4-SEQUENCIA.png)
 
 * UC 5
 
-![](./imagens/diagrama-de-sequencia-US5.png)
+![](./imagens/UC5-SEQUENCIA.png)
 
 * UC 6
 
