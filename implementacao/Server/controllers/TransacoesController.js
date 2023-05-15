@@ -1,5 +1,5 @@
 
-
+import { Op } from 'sequelize';
 import Transacoes from '../models/Transacoes';
 import professor from './ProfessorController';
 import aluno from './AlunosController'
@@ -10,13 +10,24 @@ class TransacoesController{
 
     async index(req,res){
         try {
-            const transacoesSaida = await Transacoes.findAll({where:{
-                remetenteId: req.params.id
+            //   const transacoesSaida = await Transacoes.findAll({where:{
+            //       remetenteId: req.params.id
+            //   }})
+            //   const transacoesEntrada = await Transacoes.findAll({where:{
+            //     destinatarioId: req.params.id
+            // }})
+            // return res.status(200).json({entrada: transacoesEntrada, saida: transacoesSaida});
+            const transacoes = await Transacoes.findAll({where:{
+
+                    [Op.or]: [
+                      {  remetenteId: req.params.id},
+                      {  destinatarioId: req.params.id}
+                    ]
+            
             }})
-            const transacoesEntrada = await Transacoes.findAll({where:{
-              destinatarioId: req.params.id
-          }})
-            return res.status(200).json({entrada: transacoesEntrada, saida: transacoesSaida});
+
+            return res.status(200).json(transacoes);
+
           } catch (error) {
             return res.status(500).json({ error });
         }
