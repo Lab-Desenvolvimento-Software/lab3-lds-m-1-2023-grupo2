@@ -19,7 +19,7 @@ class LoginController{
                 return res.status(401).json("Usuario ou senha incorretos!");
             }
             else{
-                console.log('oiiiiiiiiiiiiiiiiiiiii')
+               
                 return res.status(200).json(usuario);
             }
 
