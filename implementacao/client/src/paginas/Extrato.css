@@ -1,0 +1,16 @@
+form#transacao{
+    box-shadow: 0 0 0.3em var(--lightgrey);
+    width: 300px;
+    min-height: 250px;
+    margin: 0 auto 20px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px 20px;
+}
+form#transacao>h3{
+    color: var(--grey);
+    font-size: 12px;
+}
