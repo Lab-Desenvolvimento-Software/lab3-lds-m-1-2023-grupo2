@@ -1,23 +1,40 @@
 
-
+import { Op } from 'sequelize';
 import Transacoes from '../models/Transacoes';
 import professor from './ProfessorController';
 import aluno from './AlunosController'
 import nodemailer from 'nodemailer'
+import Professores from '../models/Professores';
+import Alunos from '../models/Alunos';
+import Usuarios from '../models/Usuarios';
 
 class TransacoesController{
 
 
     async index(req,res){
         try {
-            const transacoesSaida = await Transacoes.findAll({where:{
-                remetenteId: req.params.id
-            }})
-            const transacoesEntrada = await Transacoes.findAll({where:{
-              destinatarioId: req.params.id
-          }})
-            return res.status(200).json({entrada: transacoesEntrada, saida: transacoesSaida});
+            //   const transacoesSaida = await Transacoes.findAll({where:{
+            //       remetenteId: req.params.id
+            //   }})
+            //   const transacoesEntrada = await Transacoes.findAll({where:{
+            //     destinatarioId: req.params.id
+            // }})
+            // return res.status(200).json({entrada: transacoesEntrada, saida: transacoesSaida});
+            const transacoes = await Transacoes.findAll({where:{
+
+                    [Op.or]: [
+                      {  remetenteId: req.params.id},
+                      {  destinatarioId: req.params.id}
+                    ]
+            
+            },
+            include: [{ model: Usuarios, as: 'remetente' },
+            { model: Usuarios, as: 'destinatario' }]})
+
+            return res.status(200).json(transacoes);
+
           } catch (error) {
+            console.log(error)
             return res.status(500).json({ error });
         }
     }
@@ -71,6 +88,8 @@ class TransacoesController{
         destinatarioId: req.body.destinatario
       }
       );
+
+
       res.status(200).json("transacao realizada com sucesso!");
     } catch (error) {
       res.status(500).json({ error });

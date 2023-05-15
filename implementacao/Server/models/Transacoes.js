@@ -21,8 +21,8 @@ class Transacoes extends Model {
 
   static associate(models) {
     // inserir associacoes
-    this.belongsTo(models.usuarios, { foreignKey: 'destinatarioId' });
-    this.belongsTo(models.usuarios, { foreignKey: 'remetenteId' });
+    this.belongsTo(models.usuarios, {as: 'destinatario', foreignKey: 'destinatarioId' });
+    this.belongsTo(models.usuarios, { as: 'remetente', foreignKey: 'remetenteId' });
  
    }
 

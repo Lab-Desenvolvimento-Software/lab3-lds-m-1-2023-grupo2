@@ -23,8 +23,8 @@ class Usuarios extends Model {
     this.hasOne(models.alunos);
     this.hasOne(models.professores);
 
-    this.hasMany(models.transacoes, { foreignKey: 'destinatarioId' });
-    this.hasMany(models.transacoes, { foreignKey: 'remetenteId' });
+    this.hasMany(models.transacoes, {as: 'destinatario', foreignKey: 'destinatarioId' });
+    this.hasMany(models.transacoes, {as: 'remetente', foreignKey: 'remetenteId' });
 
   }
 
