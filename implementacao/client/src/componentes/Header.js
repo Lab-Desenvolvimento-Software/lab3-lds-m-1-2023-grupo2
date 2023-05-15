@@ -8,10 +8,15 @@ import { useEffect } from 'react'
 
 const Header = ()=> {
 
-    const jerson = useNavigate()
+    const navigate = useNavigate()
 
     useEffect(()=> {
-        jerson('/login')
+        let userId = sessionStorage.getItem("id");
+        if(userId){
+            navigate('/alunos')
+        }else{
+            navigate('/login')
+        }
     },[])
 
     return(
@@ -25,6 +30,8 @@ const Header = ()=> {
                 <Link to={'/alunos'}>Alunos</Link>
                 <div className={"nav-divider"}></div>
                 <Link to={'/empresas'}>Empresas</Link>
+                <div className={"nav-divider"}></div>
+                <Link to={'/extrato'}>Extrato</Link>
             </nav>
         </header>
         <section id={'main'}>

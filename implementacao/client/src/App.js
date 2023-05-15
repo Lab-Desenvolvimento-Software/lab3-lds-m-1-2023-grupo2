@@ -2,10 +2,14 @@
 import './App.css';
 // Libs
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 // Componentes
 import Alunos from './paginas/Alunos.js'
 import Empresas from './paginas/Empresas.js'
 import Login from './paginas/Login.js'
+import Extrato from './paginas/Extrato.js'
 import Header from './componentes/Header.js'
 
 function App() {
@@ -23,12 +27,15 @@ function App() {
 
           <Route path={'/alunos'} element={<Alunos/>}/>
           <Route path={'/empresas'} element={<Empresas/>}/>
+          <Route path={'/extrato'} element={<Extrato/>}/>
 
         </Route>
 
       </Routes>
 
     </BrowserRouter>
+
+    <ToastContainer position={"top-center"} autoClose={3000}/>
 
     </>
   )
