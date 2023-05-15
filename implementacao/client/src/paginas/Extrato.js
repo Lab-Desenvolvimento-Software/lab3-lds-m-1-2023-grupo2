@@ -6,18 +6,18 @@ import server from '../scripts/config.js'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const Alunos = ()=> {
+const Empresas = ()=> {
 
     useEffect(()=> {
-        getAlunos()
+        getExtrato()
     },[])
 
-    const [alunos, setAlunos] = useState([])
+    const [extrato, setExtrato] = useState([])
 
-    const getAlunos = async()=> {
+    const getExtrato = async()=> {
         try{
-            const res = await axios.get(`${server}/alunos`)
-            // setAlunos(res)
+            const res = await axios.get(`${server}/transacoes`)
+            // setEmpresas(res)
             console.log(res)
         }catch(erro){
             console.log(erro)
@@ -25,17 +25,18 @@ const Alunos = ()=> {
     }
 
     const columns = [
-        { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'nome', headerName: 'Nome', width: 130 },
-        { field: 'cpf', headerName: 'CPF', width: 130 }
+        // qnt destinatario
+        { field: '', headerName: 'ID Remetente', width: 150 },
+        { field: 'nome', headerName: 'ID Destinatário', width: 150 },
+        { field: 'cnpj', headerName: 'Quantia', width: 150 }
     ]
 
     return(
         <>
-        <h2>Alunos</h2>
+        <h2>Extrato</h2>
 
         <DataGrid
-            rows={alunos}
+            rows={extrato}
             columns={columns}
             initialState={{pagination: {paginationModel: {pageSize: 50}}}}
             pageSizeOptions={[50]}
@@ -44,4 +45,4 @@ const Alunos = ()=> {
     )
 }
 
-export default Alunos
+export default Empresas

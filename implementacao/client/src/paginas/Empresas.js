@@ -17,7 +17,8 @@ const Empresas = ()=> {
     const getEmpresas = async()=> {
         try{
             const res = await axios.get(`${server}/alunos`)
-            setEmpresas(res)
+            // setEmpresas(res)
+            console.log(res)
         }catch(erro){
             console.log(erro)
         }
@@ -27,22 +28,17 @@ const Empresas = ()=> {
         { field: 'id', headerName: 'ID', width: 70 },
         { field: 'nome', headerName: 'Nome', width: 130 },
         { field: 'cnpj', headerName: 'CNPJ', width: 130 }
-      ]
-
-    const rows = empresas
+    ]
 
     return(
         <>
         <h2>Empresas</h2>
 
         <DataGrid
-            rows={rows}
+            rows={empresas}
             columns={columns}
-            initialState={{
-            pagination: {
-                paginationModel: { page: 0, pageSize: 5 },
-            },
-            }}
+            initialState={{pagination: {paginationModel: {pageSize: 50}}}}
+            pageSizeOptions={[50]}
         />
         </>
     )
