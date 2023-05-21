@@ -6,13 +6,15 @@ import Empresas from '../models/Empresas';
 import Professores from '../models/Professores';
 import Transacoes from '../models/Transacoes';
 import Usuarios from '../models/Usuarios';
+import Vantagens from '../models/Vantages';
+
 
 //importar modelos aqui
 
 
 //inicializa os modelos e conecta ao bd
 
-const models= [Alunos, Empresas, Professores, Transacoes, Usuarios]
+const models= [Alunos, Empresas, Professores, Transacoes, Usuarios, Vantagens]
 
 class Database{
     constructor(){

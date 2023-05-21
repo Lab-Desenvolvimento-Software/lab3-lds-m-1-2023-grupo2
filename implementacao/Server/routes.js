@@ -4,6 +4,7 @@ import empresas from './controllers/EmpresasController'
 import professores from './controllers/ProfessorController'
 import login from './controllers/LoginController'
 import transacoes from './controllers/TransacoesController'
+import vantagens from './controllers/VantagensController'
 
 //controllers
 
@@ -38,6 +39,11 @@ router.post('/transacoes/:id', transacoes.create) // /transacoes/:id
 //login
 
 router.post('/login', login.login)// /login -> envia no body login e senha, salva os dados de retorno na session
+router.get('/vantagens',vantagens.index )
+router.get('/vantagens/:id',vantagens.indexEmpresa )
+router.post('/vantagens/:id',vantagens.create )
+
+
 
 router.get('/professorMoedas/:id', professores.showMoedas)
 module.exports = router

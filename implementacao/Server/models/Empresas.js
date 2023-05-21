@@ -18,7 +18,9 @@ class Empresas extends Model {
   }
 
   static associate(models) {
-// inserir associacoes
+
+    this.belongsTo(models.usuarios, { foreignKey: 'usuarioId' });
+    this.hasMany(models.vantagens, { foreignKey: 'empresaId' });
 
   }
 }
