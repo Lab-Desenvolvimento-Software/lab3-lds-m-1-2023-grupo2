@@ -87,12 +87,7 @@ class EmpresasController{
         }
     }
   async delete(req, res) {
-
-    
     try {
-
-    
-
       await Empresas.destroy({ where: { id: req.params.id } });
       res.status(200).json('Empresa Excluida com sucesso!');
     } catch (error) {
