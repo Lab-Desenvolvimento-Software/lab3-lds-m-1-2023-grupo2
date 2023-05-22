@@ -41,6 +41,8 @@ const Header = ()=> {
                 <div className={"nav-divider"}></div>
                 <Link to={`/extrato/${user_type}`}>Extrato</Link>
                 <div className={"nav-divider"}></div>
+                <Link to={`/vantagens/${user_type}`}>Vantagens</Link>
+                <div className={"nav-divider"}></div>
                 <Link to={`/login`} onClick={clearStorage}><LogoutIcon/></Link>
             </nav>
         </header>

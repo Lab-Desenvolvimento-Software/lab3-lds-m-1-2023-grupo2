@@ -26,8 +26,12 @@ const Login = ()=> {
 
             const res = await axios.post(`${server}/login`, data, {headers: {'Content-Type': 'application/json'}})
 
-            sessionStorage.setItem("id", `${res.data.id}`);
-            sessionStorage.setItem("tipo", `${res.data.TIPO}`);
+            console.log(res)
+
+            sessionStorage.setItem("id", `${res.data.id}`)
+            sessionStorage.setItem("tipo", `${res.data.TIPO}`)
+
+            res.data.TIPO === 'empresa' && sessionStorage.setItem("id_empresa", `${res.data.empresa.id}`)
 
             navigate('/alunos')
             toast.success('Login efetuado com sucesso.', {toastId: 'sucesso'})

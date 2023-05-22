@@ -92,12 +92,10 @@ const Empresas = ()=> {
                 <TextField size={'small'} required fullWidth label="Destinatario" variant="outlined" name={'destinatario'} type={'number'}/>
                 <TextField size={'small'} required fullWidth label="Mensagem" variant="outlined" name={'mensagem'}/>
 
-                <Button type={'submit'} fullWidth variant={'contained'}>Entrar</Button>
+                <Button type={'submit'} fullWidth variant={'contained'}>Enviar</Button>
 
             </form>
         }
-
-
 
         <DataGrid
             rows={extrato}

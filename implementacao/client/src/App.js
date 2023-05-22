@@ -10,6 +10,7 @@ import Alunos from './paginas/Alunos.js'
 import Empresas from './paginas/Empresas.js'
 import Login from './paginas/Login.js'
 import Extrato from './paginas/Extrato.js'
+import Vantagens from './paginas/Vantagens.js'
 import Header from './componentes/Header.js'
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path={'/alunos'} element={<Alunos/>}/>
           <Route path={'/empresas'} element={<Empresas/>}/>
           <Route path={'/extrato/:tipo'} element={<Extrato/>}/>
+          <Route path={'/vantagens/:tipo'} element={<Vantagens/>}/>
 
         </Route>
 
