@@ -14,4 +14,8 @@
 
 * UC 6
 
-![](./imagens/diagrama-de-sequencia-US6.png)
+![](./imagens/uc6-sequencia.png)
+
+* UC 7
+
+![](./imagens/uc7-sequencia.png)
