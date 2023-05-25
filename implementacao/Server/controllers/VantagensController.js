@@ -11,7 +11,7 @@ class VantagensController{
 
         try {
             const vantagens = await Vantagens.findAll({
-                
+
 
             })
             return res.status(200).json({vantagens});
@@ -26,7 +26,7 @@ class VantagensController{
         try {
             const vantagens = await Vantagens.findAll({
                 where: {
-                    empresaId: req.params.id 
+                    empresaId: req.params.id
                 }
             })
             return res.status(200).json({vantagens});
@@ -36,16 +36,16 @@ class VantagensController{
     }
 
     async create(req, res) {
-  
-          try{        
+
+          try{
             await Vantagens.create({
               NOME: req.body.nome,
               DESCRICAO: req.body.descricao,
               VALOR: req.body.valor,
               empresaId: req.params.id //id da empresa
 
-            });
-            return res.status(200).json('Vantagem cadastrada com sucesso!');   
+          });
+            return res.status(200).json('Vantagem cadastrada com sucesso!');
           } catch (error) {
             return res.status(500).json({ error });
           }
