@@ -38,6 +38,9 @@ const Vantagens = ()=> {
 
     const postVantagem = async(e)=> {
         e.preventDefault()
+        if(e.target.valor.value <= 0){
+            return toast.warning('Valor do produto deve ser maior que zero.', {toastId: 'falha'})
+        }
         try{
             let data = new FormData(form.current)
 
@@ -48,6 +51,26 @@ const Vantagens = ()=> {
         }catch(erro){
             console.log(erro)
             toast.error('Erro durante o cadastro de vantagens.', {toastId: 'falha'})
+        }
+    }
+
+    const buyVantagem = async(aluno, quantidade, destinatario, e)=> {
+        e.preventDefault()
+        try{
+            let data = new FormData()
+
+            data.append('tipo_usuario', 'aluno')
+            data.append('quantidade', quantidade)
+            data.append('destinatario', destinatario)
+
+            const res = await axios.post(`${server}/transacoes/${aluno}`, data, {headers: {'Content-Type': 'application/json'}})
+
+            console.log(res)
+
+            toast.success('Vantagem adquirida com sucesso.', {toastId: 'sucesso'})
+        }catch(erro){
+            console.log(erro)
+            toast.error('Erro durante a compra da vantagem.', {toastId: 'falha'})
         }
     }
 
@@ -83,10 +106,12 @@ const Vantagens = ()=> {
                     <h4>{item.NOME}</h4>
                     <p>{item.DESCRICAO}</p>
                     <p className={'preco'}>${item.VALOR}</p>
+                    {tipo === 'aluno' &&
+                        <Button variant={'contained'} onClick={(e)=> buyVantagem(sessionStorage.getItem("id_aluno"), item.VALOR, item.empresaId, e)}>Adquirir</Button>
+                    }
+
                 </div>
             )}
-
-
 
         </section>
 

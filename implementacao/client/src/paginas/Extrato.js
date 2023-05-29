@@ -2,6 +2,7 @@
 import { DataGrid } from '@mui/x-data-grid';
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
+import Autocomplete from '@mui/material/Autocomplete';
 // Scripts
 import server from '../scripts/config.js'
 // Libs
@@ -16,6 +17,9 @@ const Empresas = ()=> {
 
     useEffect(()=> {
         getExtrato()
+        if(tipo === 'professor'){
+            getAlunos()
+        }
     },[])
 
     const flattenObject = (ob)=> {
@@ -40,6 +44,18 @@ const Empresas = ()=> {
 
     const [extrato, setExtrato] = useState([])
 
+    const [alunos, setAlunos] = useState([])
+
+    const getAlunos = async()=> {
+        try{
+            const res = await axios.get(`${server}/alunos`)
+            setAlunos(res.data.alunos)
+            console.log(res.data.alunos)
+        }catch(erro){
+            console.log(erro)
+        }
+    }
+
     let form = useRef(null)
 
     const getExtrato = async()=> {
@@ -63,9 +79,13 @@ const Empresas = ()=> {
 
     const postTransacao = async(e)=> {
         e.preventDefault()
+        if(e.target.quantidade.value <= 0){
+            return toast.warning('Valor da transação não pode ser menor que zero.', {toastId: 'falha'})
+        }
         try{
             let data = new FormData(form.current)
-            data.append("tipo_usuario", `${tipo}`);
+            data.append("tipo_usuario", `${tipo}`)
+            data.set("destinatario", alunos.filter(item=> item.EMAIL === e.target.destinatario.value)[0].id)
 
             const res = await axios.post(`${server}/transacoes/${sessionStorage.getItem("id")}`, data, {headers: {'Content-Type': 'application/json'}})
 
@@ -89,7 +109,14 @@ const Empresas = ()=> {
                 <h3>Nova transação</h3>
 
                 <TextField size={'small'} required fullWidth label="Quantidade" variant="outlined" name={'quantidade'} type={'number'}/>
-                <TextField size={'small'} required fullWidth label="Destinatario" variant="outlined" name={'destinatario'} type={'number'}/>
+                <Autocomplete
+                    disablePortal
+                    id="combo-box-demo"
+                    options={alunos.map(item=> item.EMAIL)}
+                    sx={{ width: 260 }}
+                    renderInput={(params) => <TextField required name={'destinatario'} {...params} label="Destinatário"/>}
+                    size={'small'}
+                />
                 <TextField size={'small'} required fullWidth label="Mensagem" variant="outlined" name={'mensagem'}/>
 
                 <Button type={'submit'} fullWidth variant={'contained'}>Enviar</Button>

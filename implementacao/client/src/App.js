@@ -33,7 +33,6 @@ function App() {
 
         </Route>
 
-        <Route path={'*'} element={<><h1>Essa página não existe</h1><p>Erro 404</p></>}/>
 
       </Routes>
 

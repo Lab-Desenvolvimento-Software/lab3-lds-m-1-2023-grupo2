@@ -20,7 +20,7 @@ const Header = ()=> {
 
     useEffect(()=> {
         if(sessionStorage.getItem("id")){
-            navigate('/alunos')
+            navigate(`/vantagens/${sessionStorage.getItem("tipo")}`)
             setUserType(sessionStorage.getItem("tipo"))
         }else{
             navigate('/login')
@@ -35,11 +35,20 @@ const Header = ()=> {
                 <img id={'logo'} src={logo} alt="Ícone de moeda"/>
             </div>
             <nav>
-                <Link to={'/alunos'}>Alunos</Link>
-                <div className={"nav-divider"}></div>
-                <Link to={'/empresas'}>Empresas</Link>
-                <div className={"nav-divider"}></div>
-                <Link to={`/extrato/${user_type}`}>Extrato</Link>
+                {user_type === 'professor' &&
+                    <>
+                        <div className={"nav-divider"}></div>
+                        <Link to={'/alunos'}>Alunos</Link>
+                        <div className={"nav-divider"}></div>
+                        <Link to={'/empresas'}>Empresas</Link>
+                    </>
+                }
+                {user_type !== 'empresa' &&
+                    <>
+                        <div className={"nav-divider"}></div>
+                        <Link to={`/extrato/${user_type}`}>Extrato</Link>
+                    </>
+                }
                 <div className={"nav-divider"}></div>
                 <Link to={`/vantagens/${user_type}`}>Vantagens</Link>
                 <div className={"nav-divider"}></div>

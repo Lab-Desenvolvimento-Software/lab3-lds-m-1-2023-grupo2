@@ -32,6 +32,7 @@ const Login = ()=> {
             sessionStorage.setItem("tipo", `${res.data.TIPO}`)
 
             res.data.TIPO === 'empresa' && sessionStorage.setItem("id_empresa", `${res.data.empresa.id}`)
+            res.data.TIPO === 'aluno' && sessionStorage.setItem("id_aluno", `${res.data.aluno.id}`)
 
             navigate('/alunos')
             toast.success('Login efetuado com sucesso.', {toastId: 'sucesso'})
