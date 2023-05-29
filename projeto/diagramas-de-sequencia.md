@@ -2,7 +2,7 @@
 
 * UC 3
 
-![](./imagens/diagrama-de-sequencia-US3.png)
+![](./imagens/UC3-SEQUENCIA.png)
 
 * UC 4
 
