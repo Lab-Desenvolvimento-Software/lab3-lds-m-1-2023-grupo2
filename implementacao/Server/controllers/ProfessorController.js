@@ -4,9 +4,9 @@ import Professores from '../models/Professores';
 
 
 class ProfessorController{
-    
 
- 
+
+
 
 
   async showMoedas(req, res) {
@@ -20,7 +20,7 @@ class ProfessorController{
 
   async adicionarMoedas(req,res){
 
-    
+
   }
 
   async subtrairMoedas(quantidade,id){
@@ -43,11 +43,28 @@ class ProfessorController{
 
   }
 
+  async getMoedas(req, res){
+
+
+    console.log('pegando moedas.')
+
+    try {
+      const MOEDAS = await Professores.findByPk(req.params.id, {
+        attributes: ['MOEDAS'],
+      });
+      return res.status(200).json(MOEDAS);
+    } catch (error) {
+      console.log(error)
+      return error;
+    }
+
+  }
+
   }
 
 
 
-  
+
 
 
 

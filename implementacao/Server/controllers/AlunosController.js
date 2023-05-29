@@ -7,7 +7,7 @@ import Usuarios from '../models/Usuarios';
 
 class AlunosController{
     async index(req, res){
-      
+
         try {
             const alunos = await Alunos.findAll({
             })
@@ -22,7 +22,7 @@ class AlunosController{
     async create(req, res) {
 
       const alunos = {
-          
+
             EMAIL: req.body.email,
             CPF: req.body.cpf,
             RG: req.body.rg,
@@ -87,7 +87,7 @@ class AlunosController{
     }
   }
   async show(req, res) {
-    
+
     try {
       const aluno = await Alunos.findByPk(req.params.id);
       res.status(200).json(aluno);
@@ -126,6 +126,23 @@ class AlunosController{
       return error;
     }
 
+
+  }
+
+  async getMoedas(req, res){
+
+
+    console.log('pegando moedas.')
+
+    try {
+      const MOEDAS = await Alunos.findByPk(req.params.id, {
+        attributes: ['MOEDAS'],
+      });
+      return res.status(200).json(MOEDAS);
+    } catch (error) {
+      console.log(error)
+      return error;
+    }
 
   }
 

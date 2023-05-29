@@ -33,6 +33,7 @@ const Login = ()=> {
 
             res.data.TIPO === 'empresa' && sessionStorage.setItem("id_empresa", `${res.data.empresa.id}`)
             res.data.TIPO === 'aluno' && sessionStorage.setItem("id_aluno", `${res.data.aluno.id}`)
+            res.data.TIPO === 'professor' && sessionStorage.setItem("id_professor", `${res.data.professore.id}`)
 
             navigate('/alunos')
             toast.success('Login efetuado com sucesso.', {toastId: 'sucesso'})

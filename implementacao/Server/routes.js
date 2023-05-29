@@ -19,7 +19,7 @@ router.post('/alunos', alunos.create)
 router.delete('/alunos/:id', alunos.delete)
 router.put('/alunos/:id', alunos.update)
 router.get('/alunos/:id', alunos.show)
-
+router.get('/moedasalunos/:id', alunos.getMoedas)
 
 //empresas
 router.get('/empresas', empresas.index)
@@ -29,6 +29,7 @@ router.put('/empresas/:id', empresas.update)
 router.get('/empresas/:id', empresas.show)
 
 //professores
+router.get('/moedasprofessor/:id', professores.getMoedas)
 
 //transacoes
 
