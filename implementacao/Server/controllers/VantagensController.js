@@ -45,6 +45,7 @@ class VantagensController{
               NOME: req.body.nome,
               DESCRICAO: req.body.descricao,
               VALOR: req.body.valor,
+              IMG: req.body.img,
               empresaId: req.params.id //id da empresa
 
           });
