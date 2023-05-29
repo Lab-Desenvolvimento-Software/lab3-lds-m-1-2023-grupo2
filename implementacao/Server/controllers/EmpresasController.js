@@ -61,6 +61,7 @@ class EmpresasController{
           try{        
             await Empresas.create({
               CNPJ: req.body.cnpj,
+              EMAIL: req.body.email,
       
               usuario: usuarios
       

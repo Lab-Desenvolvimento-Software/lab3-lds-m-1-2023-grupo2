@@ -109,6 +109,26 @@ class AlunosController{
 
   }
 
+  async subtrairMoedas(quantidade,id){
+
+
+    console.log('subtraindo moedas')
+
+    try {
+      await Alunos.update({
+        MOEDAS: Sequelize.literal(`MOEDAS - ${quantidade}`)
+      }, {
+        where: { id: id }
+      });
+      return "sucesso";
+    } catch (error) {
+      console.log(error)
+      return error;
+    }
+
+
+  }
+
 }
 
 export default new AlunosController();

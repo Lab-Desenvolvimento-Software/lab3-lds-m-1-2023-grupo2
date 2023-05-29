@@ -7,6 +7,7 @@ import nodemailer from 'nodemailer'
 import Professores from '../models/Professores';
 import Alunos from '../models/Alunos';
 import Usuarios from '../models/Usuarios';
+import vantagens from './VantagensController';
 
 class TransacoesController{
 
@@ -45,8 +46,7 @@ class TransacoesController{
     if(req.body.tipo_usuario=='professor'){
         professor.subtrairMoedas(req.body.quantidade, req.params.id )
         aluno.adicionarMoedas(req.body.quantidade, req.body.destinatario)
-    }
-
+        
 
 //=================email===================//
     let testAccount = await nodemailer.createTestAccount();
@@ -79,6 +79,22 @@ class TransacoesController{
 
 //=================email===================//
 
+    }else{
+      if(req.body.tipo_usuario=='aluno'){
+
+        aluno.subtrairMoedas(req.body.quantidade, req.params.id)
+
+        vantagens.claim(req.body.destinatario,req.params.id)
+
+
+          return res.status(200).json({message:"Vantagem reinvindicada com sucesso! Um codigo foi enviado ao seu email!"})
+
+        
+
+
+      }
+    }
+
     try {
       await Transacoes.create({
         QUANTIDADE: req.body.quantidade,
@@ -87,10 +103,11 @@ class TransacoesController{
 
         destinatarioId: req.body.destinatario
       }
-      );
+    );
 
 
-      res.status(200).json("transacao realizada com sucesso!");
+
+      return res.status(200).json("transacao realizada com sucesso!");
     } catch (error) {
       res.status(500).json({ error });
     }

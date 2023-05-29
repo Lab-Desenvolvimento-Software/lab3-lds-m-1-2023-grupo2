@@ -9,6 +9,9 @@ class Empresas extends Model {
         CNPJ: {
           type: Sequelize.STRING,  
         },
+        EMAIL: {
+          type: Sequelize.STRING
+        }
       },
       {
         sequelize,
