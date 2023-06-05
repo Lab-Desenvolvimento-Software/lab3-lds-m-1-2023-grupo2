@@ -38,56 +38,68 @@ class TransacoesController{
     }
 
   async extratoPdf(req,res){
-    try {
-      const transacoesSaida = await Transacoes.findAll({
-        where: {
-          remetenteId: req.params.id,
-        },
-      });
-      const transacoesEntrada = await Transacoes.findAll({
-        where: {
-          destinatarioId: req.params.id,
-        },
-      });
+    // try {
+    //   const transacoesSaida = await Transacoes.findAll({
+    //     where: {
+    //       remetenteId: req.params.id,
+    //     },
+    //   });
+    //   const transacoesEntrada = await Transacoes.findAll({
+    //     where: {
+    //       destinatarioId: req.params.id,
+    //     },
+    //   });
 
-      // Preparar estrutura do documento
-      const docDefinition = {
-        content: [
-          { text: 'Relatório de Extrato', style: 'header' },
-          { text: 'Transações de Saída', style: 'subheader' },
-          ...transacoesSaida.map((transaction) =>
-            JSON.stringify(transaction)
-          ), 
-          { text: 'Transações de entrada', style: 'subheader' },
-          ...transacoesEntrada.map((transaction) =>
-            JSON.stringify(transaction)
-          ), // JSON.stringify por outra funcao de formatação
-        ],
-        styles: {
-          header: {
-            fontSize: 18,
-            bold: true,
-            margin: [0, 0, 0, 10],
-          },
-          subheader: {
-            fontSize: 16,
-            bold: true,
-            margin: [0, 10, 0, 5],
-          },
+    //   // Preparar estrutura do documento
+    //   const docDefinition = {
+    //     content: [
+    //       { text: 'Relatório de Extrato', style: 'header' },
+    //       { text: 'Transações de Saída', style: 'subheader' },
+    //       ...transacoesSaida.map((transaction) =>
+    //         JSON.stringify(transaction)
+    //       ), 
+    //       { text: 'Transações de entrada', style: 'subheader' },
+    //       ...transacoesEntrada.map((transaction) =>
+    //         JSON.stringify(transaction)
+    //       ), // JSON.stringify por outra funcao de formatação
+    //     ],
+    //     styles: {
+    //       header: {
+    //         fontSize: 18,
+    //         bold: true,
+    //         margin: [0, 0, 0, 10],
+    //       },
+    //       subheader: {
+    //         fontSize: 16,
+    //         bold: true,
+    //         margin: [0, 10, 0, 5],
+    //       },
         
-        },
-      };
+    //     },
+    //   };
 
-      const pdfDoc = pdfMake.createPdf(docDefinition);
-      pdfDoc.getBuffer((buffer) => {
-        res.setHeader('Content-Disposition', 'attachment;filename=extrato.pdf'); //browser faz o download do arquivo
-        res.setHeader('Content-Type', 'application/pdf');
-        res.send(buffer);
-      });
-    } catch (error) {
-      console.log(error);
-      return res.status(500).json({ error });
-    }
+    //   const pdfDoc = pdfMake.createPdf(docDefinition);
+    //   pdfDoc.getBuffer((buffer) => {
+    //     res.setHeader('Content-Disposition', 'attachment;filename=extrato.pdf'); //browser faz o download do arquivo
+    //     res.setHeader('Content-Type', 'application/pdf');
+    //     res.send(buffer);
+    //   });
+    // } catch (error) {
+    //   console.log(error);
+    //   return res.status(500).json({ error });
+    // }
+    const docDefinition = {
+      content: [
+        'This is a test PDF',
+      ],
+    };
+    
+    const pdfDoc = pdfMake.createPdf(docDefinition);
+    pdfDoc.getBuffer((buffer) => {
+      res.setHeader('Content-Disposition', 'attachment;filename=extrato.pdf'); 
+      res.setHeader('Content-Type', 'application/pdf');
+      res.send(buffer);
+    });
   }
     
   async create(req, res) {

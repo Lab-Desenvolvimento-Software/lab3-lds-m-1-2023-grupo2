@@ -92,7 +92,7 @@ const Vantagens = ()=> {
                 <TextField size={'small'} required fullWidth label="Nome" variant="outlined" name={'nome'}/>
                 <TextField size={'small'} required fullWidth label="Descrição" variant="outlined" name={'descricao'}/>
                 <TextField size={'small'} required fullWidth label="Valor" variant="outlined" name={'valor'} type={'number'}/>
-                <TextField size={'small'} required fullWidth label="URL Imagem" variant="outlined" name={'img'} type={'number'}/>
+                <TextField size={'small'} required fullWidth label="URL Imagem" variant="outlined" name={'img'}/>
 
                 <Button type={'submit'} fullWidth variant={'contained'}>Adicionar</Button>
 
