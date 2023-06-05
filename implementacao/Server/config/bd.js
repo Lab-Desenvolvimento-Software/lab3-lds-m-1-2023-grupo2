@@ -4,7 +4,7 @@ module.exports = {
     host: 'localhost',
 
     username: 'root',
-    password: 'Lun@2019',
+    password: '#BeBDmysql123',
     database: 'lab3',
 
     define: {
