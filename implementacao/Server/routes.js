@@ -36,6 +36,7 @@ router.get('/moedasprofessor/:id', professores.getMoedas)
 router.get('/transacoes/:id', transacoes.index) // /transacoes/:id  enviar apenas id pelo parametro, recebe transacoes de entrada e de saida (dois objetos)
 router.post('/transacoes/:id', transacoes.create) // /transacoes/:id
 // post precisa mandar: tipo_usuario ='professor', quantidade, id (usuario e nao do professor/aluno. O mesmo que ta nos parametros do get, esse e o remetente, no caso o professor). destinatario -> o id do aluno que vai receber (se for fazer um dropdown, pega o atributo usuarioId do aluno e envia).
+router.get('/transacoesPdf/:id', transacoes.extratoPdf)
 
 //login
 
