@@ -99,7 +99,7 @@ const Empresas = ()=> {
 
     return(
         <>
-        <h2>Extrato</h2>
+        <h2>Extrato <a href={`http://localhost:2345/transacoesPdf/${sessionStorage.getItem("id")}`}><span className={'download'}>Gerar extrato</span></a></h2>
 
         {
             tipo === 'professor' &&
