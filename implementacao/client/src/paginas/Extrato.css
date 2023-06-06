@@ -14,3 +14,7 @@ form#transacao>h3{
     color: var(--grey);
     font-size: 12px;
 }
+.download{
+    font-size: 12px;
+    text-decoration: underline;
+}
