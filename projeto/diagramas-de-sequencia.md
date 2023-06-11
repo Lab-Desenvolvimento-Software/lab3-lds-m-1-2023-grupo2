@@ -14,11 +14,12 @@
 
 * UC 6
 
-![](./imagens/uc6-sequencia.png)
+![](./imagens/UC6-SEQUENCIA.png)
 
 * UC 7
 
-![](./imagens/uc7-sequencia.png)
+![](./imagens/UC7-SEQUENCIA.png)
+
 * UC 8
 
-![](./imagens/SEQUENCIA_PDF.png)
+![](./imagens/UC8-SEQUENCIA.png)
