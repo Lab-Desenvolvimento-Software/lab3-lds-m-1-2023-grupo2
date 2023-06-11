@@ -28,14 +28,14 @@ const Login = ()=> {
 
             console.log(res)
 
-            sessionStorage.setItem("id", `${res.data.id}`)
-            sessionStorage.setItem("tipo", `${res.data.TIPO}`)
+            sessionStorage.setItem("id", `${res.data.id}`) // ID do usuário
+            sessionStorage.setItem("tipo", `${res.data.TIPO}`) // aluno, professor, empresa
 
             res.data.TIPO === 'empresa' && sessionStorage.setItem("id_empresa", `${res.data.empresa.id}`)
             res.data.TIPO === 'aluno' && sessionStorage.setItem("id_aluno", `${res.data.aluno.id}`)
             res.data.TIPO === 'professor' && sessionStorage.setItem("id_professor", `${res.data.professore.id}`)
 
-            navigate('/alunos')
+            navigate('/')
             toast.success('Login efetuado com sucesso.', {toastId: 'sucesso'})
         }catch(erro){
             console.log(erro)

@@ -25,7 +25,8 @@ const Empresas = ()=> {
 
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'CNPJ', headerName: 'CNPJ', width: 200 },
+        { field: 'CNPJ', headerName: 'CNPJ', width: 150 },
+        { field: 'EMAIL', headerName: 'E-mail', width: 200 },
     ]
 
     return(

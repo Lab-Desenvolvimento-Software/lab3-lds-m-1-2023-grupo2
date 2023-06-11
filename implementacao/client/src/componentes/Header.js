@@ -20,7 +20,6 @@ const Header = ()=> {
 
     useEffect(()=> {
         if(sessionStorage.getItem("id")){
-            navigate(`/vantagens/${sessionStorage.getItem("tipo")}`)
             setUserType(sessionStorage.getItem("tipo"))
         }else{
             navigate('/login')
@@ -30,10 +29,12 @@ const Header = ()=> {
     return(
         <>
         <header>
+
             <div>
                 <h1>S.M.E</h1>
                 <img id={'logo'} src={logo} alt="Ícone de moeda"/>
             </div>
+
             <nav>
                 {user_type === 'professor' &&
                     <>

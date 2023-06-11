@@ -65,3 +65,12 @@ h2{
     font-size: 20px;
     margin-bottom: 10px;
 }
+#bem-vindo-h3{
+    text-align: center;
+    padding-top: 100px;
+    font-size: 30px;
+}
+#bem-vindo-p{
+    text-align: center;
+    font-size: 20px;
+}
