@@ -5,14 +5,14 @@
 | # | Primary Key |
 | @ | Foreign Key |
 
-* Usuario(**#id**, login, senha)
+* Usuario(**#id**, login, senha, tipo, nome)
 
-* Aluno(**#id**, *@id_usuario*, nome, email, cpf, rg, logradouro, cidade, bairro, numero, instituicao, curso, moedas)
+* Aluno(**#id**, *@id_usuario*, email, cpf, rg, logradouro, cidade, bairro, numero, instituicao, curso, moedas)
 
-* Professor(**#id**, *@id_usuario*, nome, cpf, departamente, instituicao, moedas)
+* Professor(**#id**, *@id_usuario*, cpf, departamente, instituicao, moedas)
 
-* Empresa(**#id**, *@id_usuario*, cnpj, nome)
+* Empresa(**#id**, *@id_usuario*, cnpj, nome, email)
 
-* Transacao(**#id**, *@id_destinatario*, *@id_remetente*, quantidade, entrada, saida)
+* Transacao(**#id**, *@id_destinatario*, *@id_remetente*, quantidade)
 
-* Vantagem(**#id**, *@id_empresa*, nome, descricao, foto)
+* Vantagem(**#id**, *@id_empresa*, nome, descricao, valor, img)
