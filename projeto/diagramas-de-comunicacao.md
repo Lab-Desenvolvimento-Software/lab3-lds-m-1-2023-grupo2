@@ -2,23 +2,24 @@
 
 * UC 3
 
-![](./imagens/UC3-SEQUENCIA.png)
+![](./imagens/comunicacao/Comunicacao-UC3.png)
 
 * UC 4
 
-![](./imagens/UC4-SEQUENCIA.png)
+![](./imagens/comunicacao/Comunicacao-UC4.png)
 
 * UC 5
 
-![](./imagens/UC5-SEQUENCIA.png)
+![](./imagens/comunicacao/Comunicacao-UC5.png)
 
 * UC 6
 
-![](./imagens/uc6-sequencia.png)
+![](./imagens/comunicacao/Comunicacao-UC6.png)
 
 * UC 7
 
-![](./imagens/uc7-sequencia.png)
+![](./imagens/comunicacao/Comunicacao-UC7.png)
+
 * UC 8
 
-![](./imagens/SEQUENCIA_PDF.png)
+![](./imagens/comunicacao/Comunicacao-UC8.png)
