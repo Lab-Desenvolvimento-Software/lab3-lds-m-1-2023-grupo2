@@ -12,6 +12,8 @@
 | [MAPEAMENTO MER.](./projeto/mapeamento-diagrama-de-classes-para-MER.md) |
 | [DIAGRAMAS DE SEQUÊNCIA.](./projeto/diagramas-de-sequencia.md) |
 | [DIAGRAMAS DE SEQUÊNCIA DE SISTEMA.](./projeto/diagramas-de-sequencia-de-sistema.md) |
+| [DIAGRAMAS DE COMUNICAÇÃO.](./projeto/diagramas-de-comunicacao.md) |
+| [ANÁLISE CRÍTICA.](./projeto/analise-critica.md) |
 | [CÓDIGO](./implementacao/) |
 
 | Colaboradores | Foto |
